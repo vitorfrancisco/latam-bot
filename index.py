@@ -25,7 +25,7 @@ def ler_gat_para_matriz(caminho):
 
         return matriz
 
-def marcar_pontos_visualmente(caminho_gat, saida_img='saida_marcada.png', saida_txt='coordenadas.txt'):
+def marcar_pontos_visualmente(caminho_gat, saida_txt='coordenadas.txt'):
     matriz = ler_gat_para_matriz(caminho_gat)
 
     fig, ax = plt.subplots(figsize=(10, 10))
@@ -47,9 +47,6 @@ def marcar_pontos_visualmente(caminho_gat, saida_img='saida_marcada.png', saida_
 
     fig.canvas.mpl_connect('button_press_event', onclick)
     plt.show()
-
-    fig.savefig(saida_img, dpi=300)
-    print(f"✅ Imagem salva como: {saida_img}")
 
     # Salva coordenadas clicadas
     with open(saida_txt, 'w') as f:
